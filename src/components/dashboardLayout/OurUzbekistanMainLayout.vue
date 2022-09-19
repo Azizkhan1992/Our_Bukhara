@@ -14,8 +14,3 @@ export default {
     components: {OurUzbHeaderLayout, OurUzbContentLayout, OurUzbFooterLayout}
 }
 </script>
-<style>
-@import '@/assets/scss/style.scss';
-@import '@/assets/scss/variables.scss';
-@import '@/assets/scss/mixins.scss';
-</style>
