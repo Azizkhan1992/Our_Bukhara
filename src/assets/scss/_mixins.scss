@@ -1,4 +1,13 @@
-@mixin flex-direction {
-    flex-direction: column;
+@mixin Flex($direction, $justify) {
+    display: flex;
+    align-items: center;
+    justify-content: $justify;
+    flex-direction: $direction;
 }
 
+@mixin Font($fSize, $lHeight, $fWeight) {
+    font-size: $fSize;
+    line-height: $lHeight;
+    font-weight: $fWeight;
+    color: #ffffff;
+}
