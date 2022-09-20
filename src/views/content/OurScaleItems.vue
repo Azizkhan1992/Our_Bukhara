@@ -26,11 +26,14 @@
   import windowScrollPosition from '@/directives/scrollPosMixin'
 export default {
   name: "our-scale",
-  mounted(){
-    this.scrollAnimate();
-    this.scrollPosition()
+  data() {
+    return {
+    }
   },
-  mixins: [windowScrollPosition],
+  created(){
+    this.scrollAnimate();
+  },
+  mixins: [windowScrollPosition('scroll'), Scroll('scrollY')],
   methods:{
     scrollAnimate(){
         window.addEventListener('scroll',  ()=>{
@@ -50,12 +53,13 @@ export default {
             }
         })
     },
-    scrollPosition(){
-      Scroll.getPosition()
-      console.log(Scroll)
-    },
     scrollPos(){
       // mixins: [windowScrollPosition('position')],
+    }
+  },
+  watch: {
+    'scrollY': function (val) {
+      console.log('y', val)
     }
   }
 };
