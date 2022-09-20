@@ -20,6 +20,7 @@ body {
   @include Flex(column, center);
   width: 100%;
   height: auto;
+  position: relative;
 
   // Header
   .our-header-container {
@@ -50,6 +51,14 @@ body {
           padding: 0;
 
           li {
+            display: inline-block;
+            position: relative;
+            background: linear-gradient(#000, #1eb53a) bottom/0% 2px no-repeat;
+            transition: all 1s ease;
+
+            &:hover{
+              background-size: 100% 3px;
+            }
             a {
               @include Font(1rem, 24px, 500);
               text-decoration: none;
@@ -59,17 +68,6 @@ body {
               &:hover {
                 color: #1eb53a;
                 transition: all 0.25s ease;
-
-                @keyframes BorderBottom {
-                    0%{max-width: 0;}
-                    100%{max-width: 100%;}
-                }
-
-                &::after{
-                    content: '';
-                    height: 2px;
-                    animation: BorderBottom 1s ease;
-                }
               }
             }
           }
@@ -246,7 +244,7 @@ body {
     // Content One Scroll
     .our-scroll-container{
         width: 85%;
-        height: 750px;
+        height: 800px;
         margin: 30px auto 0;
         display: flex;
         flex-wrap: wrap;
@@ -258,12 +256,14 @@ body {
             @include Flex(row, center);
 
             @keyframes AnimateActiveOne {
-                0%{transform: translateX(0)}
-                100%{transform: translateX(-15%)}
+                0%{transform: translateX(0); opacity: 1;}
+                50%{opacity: 0.6;}
+                100%{transform: translateX(-15%); opacity: 0.25;}
             }
             @keyframes AnimateDeactiveOne {
-                0%{transform: translateX(-15%);}
-                100%{transform: translateX(0);}
+                0%{transform: translateX(-15%); opacity: 0.25;}
+                50%{opacity: 0.6;}
+                100%{transform: translateX(0); opacity: 1;}
             }
             .desc-animate-active{
                 animation: AnimateActiveOne 1.5s ease-out;
@@ -292,17 +292,18 @@ body {
             @include Flex(row, flex-end);
 
             @keyframes AnimateRight {
-                0%{transform: translateX(0)}
-                100%{transform: translateX(15%)}
+                0%{transform: translateX(0); opacity: 1;}
+                50%{opacity: 0.6;}
+                100%{transform: translateX(15%); opacity: .25;}
             }
             @keyframes AnimateLeft {
-                0%{transform: translateX(15%);}
-                100%{transform: translateX(0);}
+                0%{transform: translateX(15%); opacity: 0.25;}
+                50%{opacity: 0.6;}
+                100%{transform: translateX(0); opacity: 1;}
             }
 
             .img-animate-right{
                 animation: AnimateRight 1.5s ease-out;
-                opacity: .25;
             }
             .img-animate-left{
                 animation: AnimateLeft 1.5s ease-in
@@ -312,7 +313,7 @@ body {
                 @include Flex(row, flex-end);
                 img{
                     border-radius: 20px;
-                    width: 90%;
+                    width: 85%;
                 }
             }
         }
@@ -383,6 +384,24 @@ body {
             height: 45%;
             @include Flex(row, flex-end);
 
+            @keyframes AnimateRight {
+              0%{transform: translateX(0); opacity: 1;}
+              50%{opacity: 0.6;}
+              100%{transform: translateX(15%); opacity: 0.25;}
+          }
+          @keyframes AnimateLeft {
+              0%{transform: translateX(15%); opacity: 0.25;}
+              50%{opacity: 0.6;}
+              100%{transform: translateX(0); opacity: 1;}
+          }
+
+          .img-animate-right{
+              animation: AnimateRight 1.5s ease-out;
+          }
+          .img-animate-left{
+              animation: AnimateLeft 1.5s ease-in
+          }
+
             .two-img-content{
                 width: 90%;
                 height: 90%;
@@ -391,11 +410,141 @@ body {
                 overflow: hidden;
 
                 img{
-                    width: 90%;
+                    width: 85%;
                     border-radius: 15px;
                 }
             }
         }
+    }
+
+
+    // Content Two Scale
+    .our-scale-container{
+      width: 100%;
+      height: 325px;
+      margin-top: 40px;
+      position: relative;
+      @include Flex(row, center);
+
+      .scale-background{
+        width: 50%;
+        height: 250%;
+        background: url('@/assets/OurItems/Content/TwoScale/Frame.svg') no-repeat;
+        background-position: center;
+        position: absolute;
+        z-index: -1;
+        left: 25%;
+        top: -55%;
+      }
+
+      .our-scale-content{
+        width: 85%;
+        height: 100%;
+        margin: 35px auto 0;
+        z-index: 1;
+        @include Flex(row, space-between);
+
+        .scale{
+          width: 25%;
+          height: 100%;
+          @include Flex(column, space-around);
+          transform-origin: 50%;
+          transform: scale(0);
+          transition: all 1s ease-out;
+
+
+          &.active{
+            transform: scale(1);
+            transition: all 1s ease-in
+          }
+
+          p{
+            @include Font(1.25rem, 20px, 500);
+            text-align: center;
+            width: 85%;
+          }
+
+          img{
+            border-radius: 50%;
+          }
+        }
+
+        .before-enter{
+          transform: scale(0);
+          transition: all 1s ease-out;
+        }
+        .enter{
+          transform: scale(1);
+          transition: all 1s ease-in;
+        }
+
+      }
+    }
+
+
+    // Content Three Open
+    .open-container{
+      width: 100%;
+      height: 2050px;
+      margin-top: 80px;
+
+      .open-content{
+        width: 85%;
+        height: 100%;
+        margin: auto;
+        @include Flex(column, space-around);
+
+        h1{
+          @include Font(3rem, 70px, 700);
+          letter-spacing: 0.02em;
+          background: linear-gradient(180deg, #0099B5 0%, #0099B5 50%, rgba(30, 181, 58, 0.1) 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        .open-wrapper{
+          width: 100%;
+          height: 90%;
+        }
+      }
+    }
+  }
+  .sticky-btn{
+    width: 200px;
+    height: 36px;
+    background: linear-gradient(180deg, #0C0B0B 0%, rgba(71, 70, 71, 0.78) 76.04%);
+    border-radius: 8px;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+    position: sticky;
+    bottom: 10px;
+    align-self: flex-end;
+    margin-right: 35px;
+    @include Flex(row, center);
+
+    a{
+      text-decoration: none;
+      @include Font(1rem, 30px, 600);
+
+    }
+
+    svg{
+      color: #ffffff;
+      margin-right: 10px;
+    }
+
+    &:hover{
+      box-shadow: 2px 8px 16px rgba(145, 152, 161, 0.15);
+      color: #1eb53a;
+
+      a{
+        color: #1eb53a;
+      }
+
+      svg{
+        color: #1EB53A;
+      }
     }
   }
 }

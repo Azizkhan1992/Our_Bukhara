@@ -42,6 +42,7 @@
     <div class="our-scroll-two">
       <div
         class="two-img-content"
+        :class="mover && checkDesc == item.id ? 'img-animate-right' : 'img-animate-left'"
         v-for="(item, idx) in ourUzbItems"
         :key="idx"
         v-show="checkDesc == item.id"
