@@ -23,7 +23,7 @@
 </template>
 <script>
   import Scroll from '@/directives/scrollPosition'
-  import windowScrollPosition from '@/directives/scrollPosMixin'
+  // import windowScrollPosition from '@/directives/scrollPosMixin'
 export default {
   name: "our-scale",
   data() {
@@ -31,9 +31,9 @@ export default {
     }
   },
   created(){
-    this.scrollAnimate();
+    // this.scrollPos();
   },
-  mixins: [windowScrollPosition('scroll'), Scroll('scrollY')],
+  mixins: [Scroll('scrollY')],
   methods:{
     scrollAnimate(){
         window.addEventListener('scroll',  ()=>{
@@ -54,12 +54,22 @@ export default {
         })
     },
     scrollPos(){
-      // mixins: [windowScrollPosition('position')],
+      // console.log(Scroll.scrollY)
     }
   },
   watch: {
     'scrollY': function (val) {
-      console.log('y', val)
+      let content = document.getElementsByClassName('scale')
+      if(250< val && val < 1225  ){
+        Array.from(content).forEach(element => {
+                    element.classList.add('active')
+                    
+                });
+      }else{
+        Array.from(content).forEach(element => {
+                    element.classList.remove('active')
+                });
+      }
     }
   }
 };
