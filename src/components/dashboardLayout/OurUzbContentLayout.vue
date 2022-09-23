@@ -6,6 +6,11 @@
     <our-carousel />
     <our-travel-items />
     <our-tour-uzb/>
+    <our-travell-helper/>
+    <our-hot-now/>
+    <our-cities-art/>
+    <our-travell-location/>
+    <our-travell-statistics/>
   </div>
 </template>
 <script>
@@ -15,6 +20,11 @@ import OurOpenUzb from "@/views/content/OurOpenUzb.vue";
 import OurCarousel from "@/views/content/OurCarousel.vue";
 import OurTravelItems from "@/views/content/OurTravelItems.vue";
 import OurTourUzb from "@/views/content/OurTourUzb.vue";
+import OurTravellHelper from '@/views/content/OurTravellHelper.vue';
+import OurHotNow from '@/views/content/OurHotNow.vue';
+import OurCitiesArt from "@/views/content/OurCitiesArt.vue";
+import OurTravellLocation from "@/views/content/OurTravellLocation.vue";
+import OurTravellStatistics from "@/views/content/OurTravellStatistics.vue"
 export default {
   name: "our-content",
   components: {
@@ -23,7 +33,12 @@ export default {
     OurOpenUzb,
     OurCarousel,
     OurTravelItems,
-    OurTourUzb
+    OurTourUzb,
+    OurTravellHelper,
+    OurHotNow,
+    OurCitiesArt,
+    OurTravellLocation,
+    OurTravellStatistics
   },
 };
 </script>

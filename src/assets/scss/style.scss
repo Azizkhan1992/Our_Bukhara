@@ -560,14 +560,7 @@ body {
         h1 {
           @include Font(3rem, 70px, 700);
           letter-spacing: 0.02em;
-          background: linear-gradient(
-            180deg,
-            #0099b5 0%,
-            #0099b5 50%,
-            rgba(30, 181, 58, 0.1) 100%
-          );
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
+          @include BackG;
         }
 
         .open-wrapper {
@@ -793,14 +786,7 @@ body {
 
           h1 {
             @include Font(3rem, 70px, 700);
-            background: linear-gradient(
-              180deg,
-              #0099b5 0%,
-              #0099b5 50%,
-              rgba(30, 181, 58, 0.1) 100%
-            );
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            @include BackG;
             letter-spacing: 0.02em;
             margin: 0;
           }
@@ -954,14 +940,7 @@ body {
         h1 {
           @include Font(3rem, 70px, 700);
           margin: 0;
-          background: linear-gradient(
-            180deg,
-            #0099b5 0%,
-            #0099b5 50%,
-            rgba(30, 181, 58, 0.1) 100%
-          );
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
+          @include BackG;
         }
 
         span {
@@ -1146,91 +1125,721 @@ body {
     }
 
     // Content Six Tour
-    .our-tour-container{
+    .our-tour-container {
       width: 100%;
       height: 1100px;
       margin-top: 125px;
+      position: relative;
 
-      .our-tour-content{
+      .tour-background {
+        width: 50%;
+        height: 75%;
+        position: absolute;
+        top: -55%;
+        right: 0%;
+        @include BackI(right, 'Frame.png');
+        z-index: -1;
+      }
+
+      .our-tour-content {
         width: 85%;
         height: 100%;
         margin: auto;
         @include Flex(column, space-around);
 
-        h1{
+        h1 {
           @include Font(3rem, 70px, 700);
-          background: linear-gradient(180deg, #0099B5 0%, #0099B5 50%, rgba(30, 181, 58, 0.1) 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          margin: 0
+          @include BackG;
+          margin: 0;
         }
-        p{
+        p {
           @include Font(1rem, 22px, 500);
           width: 75%;
           text-align: center;
         }
-        .tour-wrapper{
+        .tour-wrapper {
           width: 100%;
           height: 85%;
-          margin-top: 45px;
+          margin-top: 25px;
           @include Flex(column, space-between);
-          align-items: flex-start;
+          align-items: center;
           flex-wrap: wrap;
           flex: 0 auto;
 
-          .tour-items{
-            width: 275px;
+          .tour-items {
+            width: 23.5%;
             height: 62%;
-            @include Flex(column, flex-start);
-            align-items: flex-start;
+            position: relative;
 
-            img{
+            &.top {
+              @include Flex(column, flex-start);
+              align-items: flex-start;
+
+              .tour-curtain {
+                width: 100%;
+                height: 80%;
+                background: rgba(0, 0, 0, 0.5);
+                position: absolute;
+                border-radius: 20px;
+                bottom: 20%;
+                opacity: 0;
+                @include Flex;
+                transition: opacity 0.5s ease-out;
+
+                p {
+                  text-align: center;
+                }
+              }
+
+              &:hover .tour-curtain {
+                opacity: 1;
+                transition: opacity 0.5s ease-in;
+
+                p {
+                  @include Font(1.35rem, 32px, 500);
+                  text-align: center;
+                }
+              }
+            }
+
+            &.bottom {
+              @include Flex(column, flex-end);
+              align-items: flex-start;
+
+              .tour-curtain {
+                width: 100%;
+                height: 80%;
+                background: rgba(0, 0, 0, 0.5);
+                position: absolute;
+                border-radius: 20px;
+                bottom: 16.7%;
+                opacity: 0;
+                @include Flex;
+                transition: opacity 0.5s ease-out;
+
+                p {
+                  text-align: center;
+                }
+              }
+
+              &:hover .tour-curtain {
+                opacity: 1;
+                transition: opacity 0.5s ease-in;
+
+                p {
+                  @include Font(1.35rem, 32px, 500);
+                  text-align: center;
+                }
+              }
+            }
+
+            img {
               width: 100%;
               height: 80%;
             }
 
-            p{
+            p {
               text-align: left;
               @include Font(1.35rem, 32px, 500);
               letter-spacing: 0.02em;
             }
-            a{
+            a {
               text-decoration: none;
               @include Font(1rem, 22px, 400);
               color: rgba(255, 255, 255, 0.5);
 
-              &:hover{
+              &:hover {
                 color: #ffffff;
               }
             }
           }
-          .tour-items-one{
-            width: 275px;
+          .tour-items-one {
+            width: 23.5%;
             height: 32%;
-            @include Flex(column, flex-start);
-            align-items: flex-start;
+            position: relative;
 
-            img{
+            &.top {
+              @include Flex(column, flex-start);
+              align-items: flex-start;
+
+              .tour-curtain {
+                width: 100%;
+                height: 70%;
+                background: rgba(0, 0, 0, 0.5);
+                position: absolute;
+                border-radius: 20px;
+                bottom: 30%;
+                opacity: 0;
+                @include Flex;
+                transition: opacity 0.5s ease-out;
+
+                p {
+                  text-align: center;
+                }
+              }
+
+              &:hover .tour-curtain {
+                opacity: 1;
+                transition: opacity 0.5s ease-in;
+
+                p {
+                  text-align: center;
+                  @include Font(1.35rem, 32px, 500);
+                }
+              }
+            }
+
+            &.bottom {
+              @include Flex(column, flex-end);
+              align-items: flex-start;
+
+              .tour-curtain {
+                width: 100%;
+                height: 72%;
+                background: rgba(0, 0, 0, 0.5);
+                position: absolute;
+                border-radius: 20px;
+                bottom: 31%;
+                opacity: 0;
+                @include Flex;
+                transition: opacity 0.5s ease-out;
+
+                p {
+                  text-align: center;
+                }
+              }
+
+              &:hover .tour-curtain {
+                opacity: 1;
+                transition: opacity 0.5s ease-in;
+
+                p {
+                  text-align: center;
+                  @include Font(1.35rem, 32px, 500);
+                }
+              }
+            }
+
+            img {
               width: 100%;
               height: 80%;
             }
-            p{
+            p {
               text-align: left;
               @include Font(1.35rem, 32px, 500);
               letter-spacing: 0.02em;
             }
-            a{
+            a {
               text-decoration: none;
               @include Font(1rem, 22px, 400);
               color: rgba(255, 255, 255, 0.5);
 
-              &:hover{
+              &:hover {
                 color: #ffffff;
               }
             }
           }
         }
       }
+    }
+
+    // Content Seven Travell Helper
+    .travell-helper-container {
+      width: 100%;
+      height: 800px;
+      margin-top: 100px;
+      position: relative;
+
+      .travell-helper-background {
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: -35%;
+        left: 0;
+        @include BackI(left, 'Frame1.png');
+      }
+
+      .travell-helper-content {
+        width: 85%;
+        height: 100%;
+        margin: auto;
+        @include Flex(column, space-around);
+
+        h1 {
+          @include Font(3rem, 70px, 700);
+          @include BackG;
+          margin: 0;
+        }
+        p {
+          @include Font(1rem, 22px, 500);
+        }
+
+        .our-travell-helper {
+          width: 100%;
+          height: 80%;
+          @include Flex(row, space-between);
+
+          .helper-left-side {
+            width: 48%;
+            height: 90%;
+            @include Flex(column, flex-start);
+            align-items: flex-start;
+
+            h2 {
+              @include Font(2rem, 46px, 700);
+              @include BackG;
+              letter-spacing: 0.02em;
+              margin: 0;
+              margin-bottom: 15px;
+            }
+
+            span {
+              @include Font(1rem, 40px, 400);
+            }
+
+            .left-items {
+              width: 65%;
+              height: 25%;
+              cursor: pointer;
+              @include Flex(row, space-between);
+            }
+          }
+          .helper-right-side {
+            width: 48%;
+            height: 90%;
+            @include Flex;
+
+            .right-items {
+              width: 100%;
+              height: 100%;
+              @include Flex;
+
+              img {
+                width: 20%;
+                height: 100%;
+
+                &.img-one {
+                  transform: rotateY(90deg);
+                  transition: transform 0.5s ease-out;
+
+                  &.active {
+                    transform: rotateY(0deg);
+                    transition: transform 1s ease-in;
+                  }
+                }
+                &.img-two {
+                  transform: rotateY(90deg);
+                  transition: transform 0.5s ease-out;
+
+                  &.active {
+                    transform: rotateY(0deg);
+                    transition: transform 1s ease-in 0.25s;
+                  }
+                }
+                &.img-three {
+                  transform: rotateY(90deg);
+                  transition: transform 0.5s ease-out;
+
+                  &.active {
+                    transform: rotateY(0deg);
+                    transition: transform 1s ease-in 0.5s;
+                  }
+                }
+                &.img-four {
+                  transform: rotateY(90deg);
+                  transition: transform 0.5s ease-out;
+
+                  &.active {
+                    transform: rotateY(0deg);
+                    transition: transform 1s ease-in 0.75s;
+                  }
+                }
+                &.img-five {
+                  transform: rotateY(90deg);
+                  transition: transform 0.5s ease-out;
+
+                  &.active {
+                    transform: rotateY(0deg);
+                    transition: transform 1s ease-in 1s;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // Content Eight Hot Now
+    .hot-now-container {
+      width: 100%;
+      height: 660px;
+      margin-top: 100px;
+      position: relative;
+
+      .hot-now-background {
+        width: 50%;
+        height: 125%;
+        position: absolute;
+        top: -55%;
+        right: 0;
+        @include BackI(right, 'Frame.png');
+        z-index: -1;
+      }
+
+      .hot-now-content {
+        width: 85%;
+        height: 100%;
+        margin: auto;
+        @include Flex(row, space-between);
+
+        .hot-now-left {
+          width: 48%;
+          height: 100%;
+          @include Flex(column, space-around);
+          align-items: flex-start;
+
+          h2 {
+            @include Font(3rem, 70px, 700);
+            @include BackG;
+            margin: 0;
+          }
+          p {
+            @include Font(2rem, 46px, 500);
+            margin: 0;
+          }
+          span {
+            @include Font(1rem, 24px, 400);
+            letter-spacing: 0.02em;
+          }
+          button {
+            width: 35%;
+            height: 50px;
+            @include Font(1rem, 30px, 600);
+            background: linear-gradient(90deg, #0099b5 0%, #1eb53a 100%);
+            border-radius: 10px;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            transition: all 0.5s ease-out;
+
+            &:hover {
+              background: #ffffff;
+              color: #1eb53a;
+              border: 2px solid #1eb53a;
+              transition: all 0.5s ease-in;
+            }
+          }
+        }
+
+        .hot-now-right {
+          width: 48%;
+          height: 100%;
+          @include Flex;
+
+          .right-container {
+            width: 85%;
+            height: 75%;
+            @include Flex;
+            position: relative;
+
+            .right-carousel-container {
+              width: 35%;
+              height: 35%;
+              position: absolute;
+              top: 5%;
+              right: 10%;
+              overflow: hidden;
+              border-radius: 50%;
+
+              .right-carousel-wrapper {
+                width: 900%;
+                height: 100%;
+                @include Flex(row, space-around);
+                position: relative;
+                transition: all 1s ease-in;
+
+                @keyframes HotActiveLeft {
+                  0% {
+                    margin-left: 0;
+                  }
+                  100% {
+                    margin-left: -100%;
+                  }
+                }
+
+                &.active {
+                  animation: HotActiveLeft 2s ease-in;
+                }
+                .carousel-items {
+                  width: 100%;
+                  height: 100%;
+
+                  img {
+                    width: 100%;
+                    height: 100%;
+                  }
+                }
+              }
+            }
+
+            img {
+              width: 85%;
+              height: 85%;
+            }
+          }
+        }
+      }
+    }
+
+    // Content Nine Cities Art
+    .cities-art-container {
+      width: 100%;
+      height: 1060px;
+      margin-top: 100px;
+      position: relative;
+
+      .cities-art-background {
+        width: 50%;
+        height: 75%;
+        position: absolute;
+        top: -50%;
+        @include BackI(left, 'Frame1.png');
+      }
+
+      .cities-art-content {
+        width: 85%;
+        height: 100%;
+        margin: auto;
+        @include Flex(column, space-around);
+
+        h1 {
+          @include Font(3rem, 70px, 700);
+          @include BackG;
+          margin: 0;
+        }
+        p {
+          @include Font(1rem, 22px, 500);
+          letter-spacing: 0.02em;
+        }
+
+        .cities-art-wrapper {
+          width: 100%;
+          height: 80%;
+          @include Flex(row, space-between);
+          flex-wrap: wrap;
+          flex: 0 auto;
+          overflow: hidden;
+
+          .cities-art-items {
+            width: 24%;
+            height: 30%;
+            @include Flex;
+            position: relative;
+
+            &.cloned-one {
+              transform: translateX(-100%);
+              opacity: 0.5;
+              transition: all 1s ease-out;
+
+              &.active {
+                transform: translateX(0);
+                opacity: 1;
+                transition: all 1s ease-in;
+              }
+            }
+            &.cloned-two {
+              transform: translateX(100%);
+              opacity: 0.5;
+              transition: all 1s ease-out;
+
+              &.active {
+                transform: translateX(0);
+                opacity: 1;
+                transition: all 1s ease-in;
+              }
+            }
+
+            &.real-items-one {
+              transform: translateX(-100%);
+              opacity: 0.5;
+              transition: all 1s ease-out;
+
+              &.active {
+                transform: translateX(0);
+                opacity: 1;
+                transition: all 1s ease-in;
+              }
+            }
+
+            &.real-items-two {
+              transform: translateX(100%);
+              opacity: 0.5;
+              transition: all 1s ease-out;
+
+              &.active {
+                transform: translateX(0);
+                opacity: 1;
+                transition: all 1s ease-in;
+              }
+            }
+
+            &.cloned-three {
+              transform: translateX(-100%);
+              opacity: 0.5;
+              transition: all 1s ease-out;
+
+              &.active {
+                transform: translateX(0);
+                opacity: 1;
+                transition: all 1s ease-in;
+              }
+            }
+
+            &.cloned-four {
+              transform: translateX(100%);
+              opacity: 0.5;
+              transition: all 1s ease-out;
+
+              &.active {
+                transform: translateX(0);
+                opacity: 1;
+                transition: all 1s ease-in;
+              }
+            }
+
+            img {
+              width: 100%;
+              height: 100%;
+            }
+            p {
+              position: absolute;
+              top: 35%;
+              @include Font(1.5rem, 36px, 500);
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+
+    // Content Ten Travell Location
+    .travell-location-container{
+      width: 100%;
+      height: 900px;
+      margin-top: 100px;
+      position: relative;
+
+      .travell-location-background{
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: -55%;
+        right: 0;
+        @include BackI(right, 'Frame.png');
+        z-index: -1;
+      }
+
+      .travell-location-content{
+        width: 85%;
+        height: 100%;
+        margin: auto;
+        @include Flex(column, space-around);
+
+        .travell-location-items{
+          width: 100%;
+          height: 85%;
+          @include Flex(row, space-between);
+
+          .travell-location-left{
+            width: 48%;
+            height: 100%;
+            @include Flex(column, space-around);
+            align-items: flex-start;
+
+            h2{
+              @include Font(1.85rem, 30px, 700);
+              @include Flex;
+              width: 18%;
+              height: 10%;
+              margin: 0;
+              background: linear-gradient(180deg, #0099B5 0%, #0099B5 50%, rgba(30, 181, 58, 0.1) 100%);
+              text-align: center;
+              border-radius: 20px;
+            }
+
+            h1{
+              @include Font(4rem, 90px, 800);
+              margin: 0;
+            }
+
+            p{
+              @include Font(2.5rem, 60px, 700);
+              width: 50%;
+              margin: 0;
+            }
+
+            span{
+              @include Font(1.5rem, 40px, 500)
+            }
+          }
+  
+          .travell-location-right{
+            width: 48%;
+            height: 100%;
+            @include Flex(column, space-around);
+            align-items: flex-start;
+
+            .location-right-images{
+              width: 50%;
+              height: 35%;
+              @include Flex(row, space-between);
+              position: relative;
+
+              img{
+                width: 100%;
+                height: 100%;
+
+                &.img-two{
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  z-index: -1;
+                }
+              }
+            }
+
+            p{
+              @include Font(2.5rem, 60px, 700);
+              margin: 0;
+            }
+            span{
+              @include Font(1.5rem, 40px, 500)
+            }
+          }
+        }
+        button{
+          width: 25%;
+          height: 50px;
+          background: linear-gradient(90deg, #0099B5 0%, #1EB53A 100%);
+          border-radius: 10px;
+          border: none;
+          padding: 0;
+          @include Font(1rem, 60px, 700);
+          @include Flex;
+          cursor: pointer;
+
+          &:hover{
+            box-shadow: 0 0 10px #049da7;
+          }
+        }
+      }
+    }
+
+    // Elewen Travell Statistics
+    .travell-statistics-container{
+      width: 100%;
+      height: 1700px;
     }
   }
   .sticky-btn {

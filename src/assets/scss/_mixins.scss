@@ -11,3 +11,15 @@
     font-weight: $fWeight;
     color: #ffffff;
 }
+
+@mixin  BackG() {
+    background: linear-gradient(180deg, #0099B5 0%, #0099B5 50%, rgba(30, 181, 58, 0.1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@mixin BackI($back_p, $bg_img) {
+    background: url('@/assets/OurItems/Content/'+ $bg_img) no-repeat;
+    background-size: 50%;
+    background-position: $back_p center;
+}
