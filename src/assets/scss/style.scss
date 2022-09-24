@@ -1569,7 +1569,7 @@ body {
                 }
 
                 &.active {
-                  animation: HotActiveLeft 2s ease-in;
+                  animation: HotActiveLeft 2.025s ease-in;
                 }
                 .carousel-items {
                   width: 100%;
@@ -1724,13 +1724,13 @@ body {
     }
 
     // Content Ten Travell Location
-    .travell-location-container{
+    .travell-location-container {
       width: 100%;
       height: 900px;
       margin-top: 100px;
       position: relative;
 
-      .travell-location-background{
+      .travell-location-background {
         width: 50%;
         height: 100%;
         position: absolute;
@@ -1740,88 +1740,110 @@ body {
         z-index: -1;
       }
 
-      .travell-location-content{
+      .travell-location-content {
         width: 85%;
         height: 100%;
         margin: auto;
         @include Flex(column, space-around);
 
-        .travell-location-items{
+        .travell-location-items {
           width: 100%;
           height: 85%;
           @include Flex(row, space-between);
 
-          .travell-location-left{
+          .travell-location-left {
             width: 48%;
             height: 100%;
             @include Flex(column, space-around);
             align-items: flex-start;
 
-            h2{
+            h2 {
               @include Font(1.85rem, 30px, 700);
               @include Flex;
               width: 18%;
               height: 10%;
               margin: 0;
-              background: linear-gradient(180deg, #0099B5 0%, #0099B5 50%, rgba(30, 181, 58, 0.1) 100%);
+              background: linear-gradient(
+                180deg,
+                #0099b5 0%,
+                #0099b5 50%,
+                rgba(30, 181, 58, 0.1) 100%
+              );
               text-align: center;
               border-radius: 20px;
             }
 
-            h1{
+            h1 {
               @include Font(4rem, 90px, 800);
               margin: 0;
             }
 
-            p{
+            p {
               @include Font(2.5rem, 60px, 700);
               width: 50%;
               margin: 0;
             }
 
-            span{
-              @include Font(1.5rem, 40px, 500)
+            span {
+              @include Font(1.5rem, 40px, 500);
             }
           }
-  
-          .travell-location-right{
+
+          .travell-location-right {
             width: 48%;
             height: 100%;
             @include Flex(column, space-around);
             align-items: flex-start;
 
-            .location-right-images{
+            .location-right-images {
               width: 50%;
               height: 35%;
               @include Flex(row, space-between);
               position: relative;
 
-              img{
-                width: 100%;
-                height: 100%;
+              img {
+                &.img-one {
+                  width: 95%;
+                  height: 100%;
+                  transition: all 1s ease-out;
 
-                &.img-two{
+                  &.active {
+                    transform: rotateZ(-15deg);
+                    transition: transform 1s ease-in;
+                  }
+                }
+
+                &.img-two {
+                  width: 95%;
+                  height: 85%;
                   position: absolute;
                   top: 0;
                   left: 0;
                   z-index: -1;
+                  transition: all 1s ease-out;
+
+                  &.active {
+                    width: 85%;
+                    height: 100%;
+                    transform: translateX(100%) scale(1.25) rotateZ(8deg);
+                  }
                 }
               }
             }
 
-            p{
+            p {
               @include Font(2.5rem, 60px, 700);
               margin: 0;
             }
-            span{
-              @include Font(1.5rem, 40px, 500)
+            span {
+              @include Font(1.5rem, 40px, 500);
             }
           }
         }
-        button{
+        button {
           width: 25%;
           height: 50px;
-          background: linear-gradient(90deg, #0099B5 0%, #1EB53A 100%);
+          background: linear-gradient(90deg, #0099b5 0%, #1eb53a 100%);
           border-radius: 10px;
           border: none;
           padding: 0;
@@ -1829,7 +1851,7 @@ body {
           @include Flex;
           cursor: pointer;
 
-          &:hover{
+          &:hover {
             box-shadow: 0 0 10px #049da7;
           }
         }
@@ -1837,9 +1859,314 @@ body {
     }
 
     // Elewen Travell Statistics
-    .travell-statistics-container{
+    .travell-statistics-container {
       width: 100%;
       height: 1700px;
+      margin-top: 100px;
+      position: relative;
+
+      .statistics-background-one{
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        top: -40%;
+        left: 0;
+        @include BackI(left, 'Frame1.png');
+        z-index: -1;
+      }
+
+      .statistics-background-two{
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        top: 25%;
+        right: 0;
+        @include BackI(right, 'Frame.png');
+        z-index: -1;
+      }
+
+      .travell-statistics-content{
+        width: 85%;
+        height: 100%;
+        margin: auto;
+        @include Flex(column, space-around);
+
+        h1{
+          @include Font(3rem, 70px, 700);
+          @include BackG;
+          margin: 0;
+        }
+        .travell-statistics-wrapper{
+          width: 100%;
+          height: 90%;
+          @include Flex(row, space-between);
+
+          .statistics-left-container{
+            width: 48%;
+            height: 100%;
+            @include Flex(column, space-around);
+            
+
+            .items{
+              width: 75%;
+              height: 24%;
+              @include Flex(column, center);
+
+              &.left-item-one{
+                transform: translateX(-50%);
+                opacity: 0;
+                transition: all 1s ease-out;
+
+                &.active{
+                  transform: translateX(0);
+                  opacity: 1;
+                  transition: all 1.5s ease-in;
+                }
+              }
+
+              &.left-item-two{
+                transform: translateX(-50%);
+                opacity: 0;
+                transition: all 1s ease-out;
+
+                &.active{
+                  transform: translateX(0);
+                  opacity: 1;
+                  transition: all 1.5s ease-in;
+                }
+              }
+
+              &.left-item-three{
+                transform: translateX(-50%);
+                opacity: 0;
+                transition: all 1s ease-out;
+
+                &.active{
+                  transform: translateX(0);
+                  opacity: 1;
+                  transition: all 1.5s ease-in
+                }
+              }
+              
+              &.left-item-four{
+                transform: translateX(-50%);
+                opacity: 0;
+                transition: all 1s ease-out;
+
+                &.active{
+                  transform: translateX(0);
+                  opacity: 1;
+                  transition: all 1.5s ease-in;
+                }
+              }
+
+              p{
+                @include Font(1.5rem, 36px, 500);
+                margin: 0;
+                margin-top: 45px;
+              }
+            }
+          }
+
+          .statistics-right-container{
+            width: 48%;
+            height: 100%;
+            @include Flex(column, space-around);
+            overflow: hidden;
+
+            .items{
+              width: 75%;
+              height: 24%;
+              @include Flex;
+              position: relative;
+
+              &.item-one-container{
+                transform: translateX(50%);
+                opacity: 0;
+                transition: all 1s ease-out;
+
+                &.active{
+                  transform: translateX(0);
+                  opacity: 1;
+                  transition: all 1.5s ease-in;
+                }
+              }
+
+              &.item-two-container{
+                transform: translateX(50%);
+                opacity: 0;
+                transition: all 1s ease-out;
+
+                &.active{
+                  transform: translateX(0);
+                  opacity: 1;
+                  transition: all 1.5s ease-in;
+                }
+              }
+
+             .one-circle-items{
+              width: 100%;
+              height: 100%;
+              @include Flex(row, space-around);
+
+              .one-title{
+                width: 25%;
+                height: 50%;
+                @include Flex;
+                flex-wrap: wrap;
+                flex: 0 auto;
+
+                .title-items{
+                  width: 100%;
+                  height: 24%;
+                  @include Flex(row, space-around);
+
+                  p{
+                    @include Font(0.85rem, 16px, 400)
+                  }
+                }
+              }
+
+              .one-circle{
+                @include Flex;
+                position: relative;
+                width: 70%;
+                height: 100%;
+                svg{
+                  position: absolute;
+                  @include Flex(row, center);
+                  transform: rotateZ(-90deg);
+
+                  &.svg-one circle:nth-child(2){
+                    stroke: #1EB53A;
+                  }
+
+                  &.svg-two circle:nth-child(2){
+                    stroke: #0099B5;
+                  }
+
+                  &.svg-three circle:nth-child(2){
+                    stroke: #CDAFFF;
+                  }
+
+                  &.svg-four circle:nth-child(2){
+                    stroke: #6C31FF;
+                  }
+                }
+              }
+
+              
+             }
+
+             .item-two-circle{
+              width: 70%;
+              height: 100%;
+              @include Flex(column, space-around);
+
+              h3{
+                margin: 0;
+                @include Font(1.65rem, 40px, 500);
+                width: 25%;
+                text-align: center;
+                margin-right: 15%;
+              }
+
+              svg{
+                transform: rotateZ(-90deg);
+              }
+
+              svg circle:nth-child(1){
+                stroke: #6C31FF;
+              }
+              svg circle:nth-child(2){
+                stroke: #0091FF;
+              }
+             }
+             .item-two-title{
+              width: 25%;
+              height: 30%;
+              margin-bottom: 100px;
+
+              .title-items-two{
+                width: 100%;
+                height: 100%;
+              @include Flex(row, space-around);
+              flex-wrap: wrap;
+              flex: 0 auto;
+
+              .first-part{
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background: #6C31FF;
+              }
+
+              .first-percent{
+                @include Font(0.85rem, 16px, 400);
+                width: 85%;
+                text-align: center;
+              }
+
+              .last-part{
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background: #0091FF;
+              }
+
+              .last-percent{
+                width: 85%;
+                @include Font(0.85rem, 16px, 400);
+                text-align: center;
+              }
+              }
+            }
+            }
+            .item-three-content{
+              width: 100%;
+              height: 100%;
+              @include Flex(column, space-around);
+
+              .item-three-chart{
+                width: 100%;
+                height: 85%;
+
+                .chart-wrapper{
+                  width: 100%;
+                  height: 100%;
+                  position: relative;
+
+                  svg{
+                    position: absolute;
+                    bottom: 0;
+                  }
+                }
+              }
+
+              h3{
+                margin: 0;
+                @include Font(1.65rem, 40px, 500);
+                margin-right: 35%;
+                width: 25%;
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // Twellwe Travell News
+    .travell-news-container{
+      width: 100%;
+      height: 1350px;
+      margin-top: 100px;
+
+      .travell-news-content{
+        width: 85%;
+        height: 100%;
+        margin: auto
+      }
     }
   }
   .sticky-btn {

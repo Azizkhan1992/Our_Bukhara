@@ -41,8 +41,30 @@
   </div>
 </template>
 <script>
-    
+    import Scroll from '@/directives/scrollPosition'
 export default {
   name: "travell-location",
+  mixins: [Scroll('scrollY')],
+  watch: {
+    'scrollY' : function(val){
+      let content1 = document.getElementsByClassName('img-one')
+      let content2 = document.getElementsByClassName('img-two')
+      if(val>8700 && val<9600){
+        Array.from(content1).forEach(elem =>{
+          elem.classList.add('active')
+        })
+        Array.from(content2).forEach(elem=>{
+          elem.classList.add('active')
+        })
+      }else{
+        Array.from(content1).forEach(elem=>{
+          elem.classList.remove('active')
+        })
+        Array.from(content2).forEach(elem=>{
+          elem.classList.remove('active')
+        })
+      }
+    }
+  }
 };
 </script>
