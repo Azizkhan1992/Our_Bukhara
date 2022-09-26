@@ -1,17 +1,17 @@
-@import './_mixins';
-@import './_variables';
+@import "./_mixins";
+@import "./_variables";
 
 @font-face {
-  font-family: 'Jost';
-  src: url('@/assets/font/jost/static/Jost-Regular.ttf');
+  font-family: "Jost";
+  src: url("@/assets/font/jost/static/Jost-Regular.ttf");
 }
 
 body {
   padding: 0;
   margin: 0;
-  background: url('@/assets/Background.jpg') no-repeat;
+  background: url("@/assets/Background.jpg") no-repeat;
   background-size: 100%;
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   --scroll-bar: linear-gradient(#377fb2, #065ea0, #377fb2);
 }
 
@@ -494,7 +494,7 @@ body {
       .scale-background {
         width: 50%;
         height: 250%;
-        background: url('@/assets/OurItems/Content/TwoScale/Frame.svg')
+        background: url("@/assets/OurItems/Content/TwoScale/Frame.svg")
           no-repeat;
         background-position: center;
         position: absolute;
@@ -770,7 +770,7 @@ body {
         .carousel-background {
           width: 50%;
           height: 150%;
-          background: url('@/assets/OurItems/Content/TwoScale/Frame.svg')
+          background: url("@/assets/OurItems/Content/TwoScale/Frame.svg")
             no-repeat;
           background-size: 100%;
           background-position: center;
@@ -1137,7 +1137,7 @@ body {
         position: absolute;
         top: -55%;
         right: 0%;
-        @include BackI(right, 'Frame.png');
+        @include BackI(right, "Frame.png");
         z-index: -1;
       }
 
@@ -1356,7 +1356,7 @@ body {
         position: absolute;
         top: -35%;
         left: 0;
-        @include BackI(left, 'Frame1.png');
+        @include BackI(left, "Frame1.png");
       }
 
       .travell-helper-content {
@@ -1483,7 +1483,7 @@ body {
         position: absolute;
         top: -55%;
         right: 0;
-        @include BackI(right, 'Frame.png');
+        @include BackI(right, "Frame.png");
         z-index: -1;
       }
 
@@ -1604,7 +1604,7 @@ body {
         height: 75%;
         position: absolute;
         top: -50%;
-        @include BackI(left, 'Frame1.png');
+        @include BackI(left, "Frame1.png");
       }
 
       .cities-art-content {
@@ -1736,7 +1736,7 @@ body {
         position: absolute;
         top: -55%;
         right: 0;
-        @include BackI(right, 'Frame.png');
+        @include BackI(right, "Frame.png");
         z-index: -1;
       }
 
@@ -1865,102 +1865,101 @@ body {
       margin-top: 100px;
       position: relative;
 
-      .statistics-background-one{
+      .statistics-background-one {
         width: 50%;
         height: 50%;
         position: absolute;
         top: -40%;
         left: 0;
-        @include BackI(left, 'Frame1.png');
+        @include BackI(left, "Frame1.png");
         z-index: -1;
       }
 
-      .statistics-background-two{
+      .statistics-background-two {
         width: 50%;
         height: 50%;
         position: absolute;
         top: 25%;
         right: 0;
-        @include BackI(right, 'Frame.png');
+        @include BackI(right, "Frame.png");
         z-index: -1;
       }
 
-      .travell-statistics-content{
+      .travell-statistics-content {
         width: 85%;
         height: 100%;
         margin: auto;
         @include Flex(column, space-around);
 
-        h1{
+        h1 {
           @include Font(3rem, 70px, 700);
           @include BackG;
           margin: 0;
         }
-        .travell-statistics-wrapper{
+        .travell-statistics-wrapper {
           width: 100%;
           height: 90%;
           @include Flex(row, space-between);
 
-          .statistics-left-container{
+          .statistics-left-container {
             width: 48%;
             height: 100%;
             @include Flex(column, space-around);
-            
 
-            .items{
-              width: 75%;
+            .items {
+              width: 80%;
               height: 24%;
               @include Flex(column, center);
 
-              &.left-item-one{
+              &.left-item-one {
                 transform: translateX(-50%);
                 opacity: 0;
                 transition: all 1s ease-out;
 
-                &.active{
+                &.active {
                   transform: translateX(0);
                   opacity: 1;
                   transition: all 1.5s ease-in;
                 }
               }
 
-              &.left-item-two{
+              &.left-item-two {
                 transform: translateX(-50%);
                 opacity: 0;
                 transition: all 1s ease-out;
 
-                &.active{
+                &.active {
                   transform: translateX(0);
                   opacity: 1;
                   transition: all 1.5s ease-in;
                 }
               }
 
-              &.left-item-three{
+              &.left-item-three {
                 transform: translateX(-50%);
                 opacity: 0;
                 transition: all 1s ease-out;
 
-                &.active{
-                  transform: translateX(0);
-                  opacity: 1;
-                  transition: all 1.5s ease-in
-                }
-              }
-              
-              &.left-item-four{
-                transform: translateX(-50%);
-                opacity: 0;
-                transition: all 1s ease-out;
-
-                &.active{
+                &.active {
                   transform: translateX(0);
                   opacity: 1;
                   transition: all 1.5s ease-in;
                 }
               }
 
-              p{
+              &.left-item-four {
+                transform: translateX(-50%);
+                opacity: 0;
+                transition: all 1s ease-out;
+
+                &.active {
+                  transform: translateX(0);
+                  opacity: 1;
+                  transition: all 1.5s ease-in;
+                }
+              }
+
+              p {
                 @include Font(1.5rem, 36px, 500);
                 margin: 0;
                 margin-top: 45px;
@@ -1968,185 +1967,256 @@ body {
             }
           }
 
-          .statistics-right-container{
+          .statistics-right-container {
             width: 48%;
             height: 100%;
             @include Flex(column, space-around);
             overflow: hidden;
 
-            .items{
+            .items {
               width: 75%;
               height: 24%;
               @include Flex;
               position: relative;
 
-              &.item-one-container{
+              &.item-one-container {
                 transform: translateX(50%);
                 opacity: 0;
                 transition: all 1s ease-out;
 
-                &.active{
+                &.active {
                   transform: translateX(0);
                   opacity: 1;
                   transition: all 1.5s ease-in;
                 }
               }
 
-              &.item-two-container{
+              &.item-two-container {
                 transform: translateX(50%);
                 opacity: 0;
                 transition: all 1s ease-out;
 
-                &.active{
+                &.active {
                   transform: translateX(0);
                   opacity: 1;
                   transition: all 1.5s ease-in;
                 }
               }
 
-             .one-circle-items{
-              width: 100%;
-              height: 100%;
-              @include Flex(row, space-around);
+              &.item-three-container {
+                transform: translateX(50%);
+                opacity: 0;
+                transition: all 1s ease-out;
 
-              .one-title{
-                width: 25%;
-                height: 50%;
-                @include Flex;
-                flex-wrap: wrap;
-                flex: 0 auto;
+                &.active {
+                  transform: translateX(0);
+                  opacity: 1;
+                  transition: all 1.5s ease-in;
+                }
+              }
 
-                .title-items{
-                  width: 100%;
-                  height: 24%;
-                  @include Flex(row, space-around);
+              &.item-four-container {
+                transform: translateX(50%);
+                opacity: 0;
+                transition: all 1s ease-out;
 
-                  p{
-                    @include Font(0.85rem, 16px, 400)
+                &.active {
+                  transform: translateX(0);
+                  opacity: 1;
+                  transition: all 1.5s ease-in;
+                }
+              }
+
+              .one-circle-items {
+                width: 100%;
+                height: 100%;
+                @include Flex(row, space-around);
+
+                .one-title {
+                  width: 25%;
+                  height: 50%;
+                  @include Flex;
+                  flex-wrap: wrap;
+                  flex: 0 auto;
+
+                  .title-items {
+                    width: 100%;
+                    height: 24%;
+                    @include Flex(row, space-around);
+
+                    p {
+                      @include Font(0.85rem, 16px, 400);
+                    }
+                  }
+                }
+
+                .one-circle {
+                  @include Flex;
+                  position: relative;
+                  width: 70%;
+                  height: 100%;
+                  svg {
+                    position: absolute;
+                    @include Flex(row, center);
+                    transform: rotateZ(-90deg);
+
+                    &.svg-one {
+                      z-index: 10;
+                    }
+
+                    &.svg-two {
+                      z-index: 8;
+                    }
+                    &.svg-three {
+                      z-index: 6;
+                    }
+                    &.svg-four {
+                      z-index: 4;
+                    }
+                  }
+
+                  .svg-one circle:nth-child(2) {
+                    stroke: #1eb53a;
+
+                    &:hover {
+                      stroke: lighten($color: #1eb53a, $amount: 25%);
+                    }
+                  }
+
+                  .svg-two circle:nth-child(2) {
+                    stroke: #0099b5;
+
+                    &:hover {
+                      stroke: lighten($color: #0099b5, $amount: 25%);
+                    }
+                  }
+
+                  .svg-three circle:nth-child(2) {
+                    stroke: #cdafff;
+
+                    &:hover {
+                      stroke: lighten($color: #cdafff, $amount: 10%);
+                    }
+                  }
+
+                  .svg-four circle:nth-child(2) {
+                    stroke: #6c31ff;
+
+                    &:hover {
+                      stroke: lighten($color: #6c31ff, $amount: 15%);
+                    }
                   }
                 }
               }
 
-              .one-circle{
-                @include Flex;
-                position: relative;
+              .item-two-circle {
                 width: 70%;
                 height: 100%;
-                svg{
-                  position: absolute;
-                  @include Flex(row, center);
+                @include Flex(column, space-around);
+
+                h3 {
+                  margin: 0;
+                  @include Font(1.65rem, 40px, 500);
+                  width: 25%;
+                  text-align: center;
+                  margin-left: 50%;
+                }
+
+                svg {
                   transform: rotateZ(-90deg);
+                }
 
-                  &.svg-one circle:nth-child(2){
-                    stroke: #1EB53A;
+                svg circle:nth-child(1) {
+                  stroke: #6c31ff;
+
+                  &:hover {
+                    stroke: lighten($color: #6c31ff, $amount: 25%);
+                  }
+                }
+                svg circle:nth-child(2) {
+                  stroke: #0091ff;
+
+                  &:hover {
+                    stroke: lighten($color: #0091ff, $amount: 25%);
+                  }
+                }
+              }
+              .item-two-title {
+                width: 25%;
+                height: 30%;
+                margin-bottom: 100px;
+
+                .title-items-two {
+                  width: 100%;
+                  height: 100%;
+                  @include Flex(row, space-around);
+                  flex-wrap: wrap;
+                  flex: 0 auto;
+
+                  .first-part {
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    background: #6c31ff;
                   }
 
-                  &.svg-two circle:nth-child(2){
-                    stroke: #0099B5;
+                  .first-percent {
+                    @include Font(0.85rem, 16px, 400);
+                    width: 85%;
+                    text-align: center;
                   }
 
-                  &.svg-three circle:nth-child(2){
-                    stroke: #CDAFFF;
+                  .last-part {
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    background: #0091ff;
                   }
 
-                  &.svg-four circle:nth-child(2){
-                    stroke: #6C31FF;
+                  .last-percent {
+                    width: 85%;
+                    @include Font(0.85rem, 16px, 400);
+                    text-align: center;
                   }
                 }
               }
 
-              
-             }
-
-             .item-two-circle{
-              width: 70%;
-              height: 100%;
-              @include Flex(column, space-around);
-
-              h3{
-                margin: 0;
-                @include Font(1.65rem, 40px, 500);
-                width: 25%;
-                text-align: center;
-                margin-right: 15%;
-              }
-
-              svg{
-                transform: rotateZ(-90deg);
-              }
-
-              svg circle:nth-child(1){
-                stroke: #6C31FF;
-              }
-              svg circle:nth-child(2){
-                stroke: #0091FF;
-              }
-             }
-             .item-two-title{
-              width: 25%;
-              height: 30%;
-              margin-bottom: 100px;
-
-              .title-items-two{
+              .four-chart-content {
                 width: 100%;
                 height: 100%;
-              @include Flex(row, space-around);
-              flex-wrap: wrap;
-              flex: 0 auto;
+                @include Flex(column, space-around);
 
-              .first-part{
-                width: 12px;
-                height: 12px;
-                border-radius: 50%;
-                background: #6C31FF;
-              }
+                .chart-wrapper {
+                  width: 100%;
+                  height: 90%;
+                }
 
-              .first-percent{
-                @include Font(0.85rem, 16px, 400);
-                width: 85%;
-                text-align: center;
-              }
-
-              .last-part{
-                width: 12px;
-                height: 12px;
-                border-radius: 50%;
-                background: #0091FF;
-              }
-
-              .last-percent{
-                width: 85%;
-                @include Font(0.85rem, 16px, 400);
-                text-align: center;
-              }
+                h3 {
+                  @include Font(1.65rem, 40px, 500);
+                }
               }
             }
-            }
-            .item-three-content{
+            .item-three-content {
               width: 100%;
               height: 100%;
               @include Flex(column, space-around);
 
-              .item-three-chart{
+              .item-three-chart {
                 width: 100%;
-                height: 85%;
+                height: 90%;
 
-                .chart-wrapper{
+                .chart-wrapper {
                   width: 100%;
                   height: 100%;
                   position: relative;
-
-                  svg{
-                    position: absolute;
-                    bottom: 0;
-                  }
+                  @include Flex;
                 }
               }
 
-              h3{
+              h3 {
                 margin: 0;
                 @include Font(1.65rem, 40px, 500);
-                margin-right: 35%;
+                margin-left: 20%;
                 width: 25%;
                 text-align: center;
               }
@@ -2157,16 +2227,464 @@ body {
     }
 
     // Twellwe Travell News
-    .travell-news-container{
+    .travell-news-container {
       width: 100%;
-      height: 1350px;
-      margin-top: 100px;
+      height: 1550px;
+      margin-top: 150px;
+      position: relative;
 
-      .travell-news-content{
+      .travell-news-background {
+        width: 50%;
+        height: 75%;
+        position: absolute;
+        top: -35%;
+        left: 0;
+        z-index: -1;
+        @include BackI(left, "Frame1.png");
+      }
+
+      .travell-news-content {
         width: 85%;
         height: 100%;
-        margin: auto
+        margin: auto;
+        @include Flex(column, space-around);
+
+        h1 {
+          @include Font(3rem, 70px, 700);
+          @include BackG;
+          letter-spacing: 0.02em;
+          margin: 0;
+        }
+        p {
+          @include Font(1rem, 22px, 500);
+        }
+        .travell-news-wrapper {
+          width: 100%;
+          height: 80%;
+          @include Flex(column, space-between);
+          overflow: hidden;
+
+          .news-wrapper-top {
+            width: 100%;
+            height: 59%;
+            @include Flex(column, space-between);
+            flex-wrap: wrap;
+            flex: 0 auto;
+
+            .item-right {
+              width: 49%;
+              height: 100%;
+              @include Flex(column, space-around);
+              border-radius: 20px;
+              background: linear-gradient(
+                180deg,
+                #0c0b0b 0%,
+                rgba(71, 70, 71, 0.78) 76.04%
+              );
+              box-shadow: 2px 8px 16px rgba(145, 152, 161, 0.15);
+              transform: translateX(-75%);
+              opacity: 0;
+              transition: all 1s ease-out;
+
+              &.active {
+                transform: translateX(0);
+                opacity: 1;
+                transition: all 1.5s ease-in;
+              }
+
+              .top-item-img {
+                width: 95%;
+                height: 55%;
+                position: relative;
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+
+              .top-item-title {
+                width: 95%;
+                height: 40%;
+                @include Flex(column, space-around);
+                align-items: flex-start;
+
+                h2 {
+                  @include Font(1.25rem, 24px, 600);
+                  letter-spacing: 0.02em;
+                  margin: 0;
+                  width: 90%;
+                }
+                p {
+                  @include Font(0.85rem, 16px, 400);
+                  letter-spacing: 0.02em;
+                  width: 75%;
+                }
+
+                .news-location {
+                  width: 45%;
+                  height: 15%;
+                  @include Flex(row, flex-start);
+                  align-items: flex-start;
+
+                  img {
+                    width: 20px;
+                    height: 20px;
+                  }
+                  span {
+                    @include Font(0.85rem, 20px, 400);
+                    display: inline-block;
+                    margin: 0 0 15px 10px;
+                  }
+                }
+                .news-footer {
+                  width: 60%;
+                  height: 15%;
+                  @include Flex(row, flex-start);
+
+                  img {
+                    width: 20px;
+                    height: 20px;
+                  }
+                  p {
+                    width: 40%;
+                    @include Font(0.85rem, 18px, 400);
+                    margin-left: 10px;
+                  }
+                  span {
+                    @include Font(0.75rem, 18px, 400);
+                    color: #878787;
+                    display: inline-block;
+                    margin-left: 10px;
+                  }
+                }
+              }
+            }
+
+            .left-items {
+              width: 49%;
+              height: 48%;
+              @include Flex(row, space-around);
+              background: linear-gradient(
+                180deg,
+                #0c0b0b 0%,
+                rgba(71, 70, 71, 0.78) 76.04%
+              );
+              border-radius: 20px;
+              box-shadow: 2px 8px 16px rgba(145, 152, 161, 0.15);
+              transform: translateX(75%);
+              opacity: 0;
+              transition: all 1s ease-out;
+
+              &.active {
+                transform: translateX(0);
+                opacity: 1;
+                transition: all 1.5s ease-in;
+              }
+
+              .top-item-img {
+                width: 30%;
+                height: 95%;
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+
+              .top-item-title {
+                width: 65%;
+                height: 95%;
+                @include Flex(column, space-around);
+                align-items: flex-start;
+
+                h2 {
+                  @include Font(1.25rem, 24px, 600);
+                  margin: 0;
+                  margin-top: 5px;
+                  letter-spacing: 0.02em;
+                  width: 90%;
+                }
+                p {
+                  @include Font(0.85rem, 16px, 400);
+                  margin: 0;
+                  margin: 10px 0;
+                  letter-spacing: 0.02em;
+                }
+                .news-location {
+                  width: 50%;
+                  height: 15%;
+                  @include Flex(row, flex-start);
+
+                  img {
+                    width: 20px;
+                    height: 20px;
+                  }
+                  span {
+                    @include Font(0.85rem, 20px, 400);
+                    display: inline-block;
+                    margin-left: 10px;
+                  }
+                }
+                .news-footer {
+                  width: 100%;
+                  height: 15%;
+                  @include Flex(row, flex-start);
+
+                  img {
+                    width: 20px;
+                    height: 20px;
+                  }
+                  p {
+                    @include Font(0.85rem, 18px, 400);
+                    letter-spacing: 0.02em;
+                    margin-left: 10px;
+                    margin-right: 25px;
+                  }
+                  span {
+                    @include Font(0.75rem, 18px, 400);
+                    display: inline-block;
+                    margin-left: 10px;
+                    color: #878787;
+                  }
+                }
+              }
+            }
+          }
+
+          .news-wrapper-bottom {
+            width: 100%;
+            height: 39%;
+            @include Flex(row, space-between);
+            align-items: flex-start;
+            flex-wrap: wrap;
+            flex: 0 auto;
+            position: relative;
+
+            .right-item {
+              transform: translateX(-100%);
+              opacity: 0;
+              transition: all 1s ease-out;
+
+              &.active {
+                transform: translateX(0);
+                opacity: 1;
+                transition: all 1.5s ease-in;
+              }
+            }
+            .left-item {
+              transform: translateX(100%);
+              opacity: 0;
+              transition: all 1s ease-out;
+
+              &.active {
+                transform: translateX(0);
+                opacity: 1;
+                transition: all 1.5s ease-in;
+              }
+            }
+
+            .news-bottom-item {
+              width: 24%;
+              height: 70%;
+              @include Flex(column, space-around);
+              background: linear-gradient(
+                180deg,
+                #0c0b0b 0%,
+                rgba(71, 70, 71, 0.78) 76.04%
+              );
+              border-radius: 20px;
+              box-shadow: 2px 8px 16px rgba(145, 152, 161, 0.15);
+
+              h3 {
+                @include Font(1rem, 18px, 600);
+                margin: 0;
+                width: 90%;
+                letter-spacing: 0.02em;
+              }
+
+              img {
+                width: 95%;
+                height: 50%;
+              }
+              .news-bottom-title {
+                width: 100%;
+                height: 10%;
+                @include Flex(row, flex-start);
+                align-items: flex-start;
+
+                img {
+                  width: 20px;
+                  height: 20px;
+                  margin-left: 15px;
+                }
+                span {
+                  @include Font(0.85rem, 18px, 400);
+                  display: inline-block;
+                  margin-left: 10px;
+                  letter-spacing: 0.02em;
+                }
+              }
+            }
+            .news-bottom-footer {
+              width: 49%;
+              height: 20%;
+              position: relative;
+              opacity: 0;
+              transition: opacity 1s ease-out;
+
+              &.active {
+                opacity: 1;
+                transition: opacity 1.5s ease-in;
+              }
+
+              input {
+                width: 100%;
+                height: 55%;
+                border-radius: 20px;
+                background: linear-gradient(
+                  180deg,
+                  #0c0b0b 0%,
+                  rgba(71, 70, 71, 0.78) 76.04%
+                );
+                box-shadow: 2px 8px 16px rgba(145, 152, 161, 0.15);
+                border: none;
+                padding: 5px 50px 0;
+                box-sizing: border-box;
+                @include Font(0.85rem, 16px, 400);
+                color: #9a9ea6;
+
+                &:hover {
+                  border: 2px solid #ffffff;
+                }
+
+                &:focus {
+                  outline: none;
+                  border: none;
+                }
+              }
+
+              button {
+                width: 15%;
+                height: 35%;
+                position: absolute;
+                right: 5%;
+                top: 10%;
+                cursor: pointer;
+                background: rgba(255, 255, 255, 0.35);
+                box-shadow: 8px 8px 16px rgba(145, 152, 161, 0.06);
+                border: none;
+                border-radius: 8px;
+                @include Font(0.75rem, 20px, 400);
+
+                &:hover {
+                  border: 2px solid #878787;
+                  color: #878787;
+                  background: #ffffff;
+                }
+              }
+            }
+          }
+        }
       }
+    }
+
+    // Threeten Travell Services
+    .travell-services-container {
+      width: 100%;
+      height: 1100px;
+      margin-top: 100px;
+
+      .travell-services-content {
+        width: 85%;
+        height: 100%;
+        margin: auto;
+        @include Flex(column, space-around);
+
+        .services-images{
+          width: 100%;
+          height: 90%;
+          @include Flex(column, space-around);
+
+          .services-left{
+            width: 85%;
+            height: 50%;
+  
+            .left-img-one{
+              width: 30%;
+              height: 30%;
+              margin-left: 200px;
+              position: relative;
+              @include Flex;
+
+
+              img{
+                position: absolute;
+    
+                &.center-img{
+                  width: 95%;
+                  left: -40%;
+                  top: 20%;
+                }
+                &.img-one{
+                  animation: RotateLeft 10s linear infinite;
+                }
+                &.img-two{
+                  animation: RotateRight 10s linear infinite;
+                }
+              }
+    
+              @keyframes RotateLeft {
+                0%{transform: rotate(60deg);}
+                20%{transform: rotate(120deg);}
+                40%{transform: rotate(180deg);}
+                60%{transform: rotate(240deg);}
+                80%{transform: rotate(300deg);}
+                100%{transform: rotate(360deg);}
+              }
+              @keyframes RotateRight {
+                0%{transform: rotate(-60deg);}
+                20%{transform: rotate(-120deg);}
+                40%{transform: rotate(-180deg);}
+                60%{transform: rotate(-240deg);}
+                80%{transform: rotate(-300deg);}
+                100%{transform: rotate(-360deg);}
+              }
+    
+              .one-title{
+                position: absolute;
+                left: -55%;
+                top: -10%;
+                @include Font(1rem, 40px, 600)
+              }
+            }
+            .left-img-two{
+              width: 30%;
+              height: 30%;
+              position: relative;
+              @include Flex;
+              margin-left: -50px;
+
+              img{
+                position: absolute
+              }
+            }
+          }
+        }
+
+        h1{
+          @include Font(3rem, 70px, 700);
+          @include BackG;
+          letter-spacing: 0.02em;
+        }
+      }
+    }
+
+    // Fourten Travell Videos
+    .travell-videos-container{
+      width: 100%;
+      height: 700px;
+      margin-top: 100px;
     }
   }
   .sticky-btn {

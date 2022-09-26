@@ -36,9 +36,10 @@
                 require('@/assets/OurItems/Content/SevenHelper/' + item.img)
               "
               alt=""
-              v-for="item in helperImages"
-              :key="item.id"
-              :class="{'img-one' : item.id == 5, 'img-two' : item.id == 4, 'img-three' : item.id == 3, 'img-four' : item.id == 2, 'img-five': item.id == 1}"
+              v-for="item, idx in helperImages"
+              :key="idx"
+              :id="idx"
+              :class="{'img-one' : idx == 4, 'img-two' : idx == 3, 'img-three' : idx == 2, 'img-four' : idx == 1, 'img-five': idx == 0}"
             />
           </div>
         </div>
@@ -78,24 +79,44 @@ export default {
   },
   mixins: [Scroll("scrollY")],
   watch: {
-    scrollY: function (val) {
-        let content1 = document.querySelector('.img-one')
-        let content2 = document.querySelector('.img-two')
-        let content3 = document.querySelector('.img-three')
-        let content4 = document.querySelector('.img-four')
-        let content5 = document.querySelector('.img-five')
+    'scrollY' : function (val) {
+        let content1 = document.getElementsByClassName('img-one')
+        let content2 = document.getElementsByClassName('img-two')
+        let content3 = document.getElementsByClassName('img-three')
+        let content4 = document.getElementsByClassName('img-four')
+        let content5 = document.getElementsByClassName('img-five')
       if(val>5800 && val<7200){
-        content1.classList.add('active')
-        content2.classList.add('active')
-        content3.classList.add('active')
-        content4.classList.add('active')
-        content5.classList.add('active')
+        Array.from(content1).forEach(elem=>{
+          elem.classList.add('active')
+        })
+        Array.from(content2).forEach(elem=>{
+          elem.classList.add('active')
+        })
+        Array.from(content3).forEach(elem=>{
+          elem.classList.add('active')
+        })
+        Array.from(content4).forEach(elem=>{
+          elem.classList.add('active')
+        })
+        Array.from(content5).forEach(elem=>{
+          elem.classList.add('active')
+        })
       }else{
-        content1.classList.remove('active')
-        content2.classList.remove('active')
-        content3.classList.remove('active')
-        content4.classList.remove('active')
-        content5.classList.remove('active')
+        Array.from(content1).forEach(elem=>{
+          elem.classList.remove('active')
+        })
+        Array.from(content2).forEach(elem=>{
+          elem.classList.remove('active')
+        })
+        Array.from(content3).forEach(elem=>{
+          elem.classList.remove('active')
+        })
+        Array.from(content4).forEach(elem=>{
+          elem.classList.remove('active')
+        })
+        Array.from(content5).forEach(elem=>{
+          elem.classList.remove('active')
+        })
       }
     },
   },

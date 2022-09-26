@@ -2,10 +2,10 @@ import Vue from 'vue'
 import App from './App.vue'
 import './assets/scss/style.scss'
 import './directives/scrollPosition'
-// import './directives/scrollPosMixin'
-// import ScrollAnimation from './directives/scrollanimation'
+import VueApexCharts from 'vue-apexcharts'
+Vue.use(VueApexCharts)
 
-// Vue.directive('scrollanimation', ScrollAnimation)
+Vue.component('my-apexchart', VueApexCharts)
 
 Vue.config.productionTip = false
 

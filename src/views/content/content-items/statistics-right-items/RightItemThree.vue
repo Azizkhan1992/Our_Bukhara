@@ -3,24 +3,7 @@
     <div class="item-three-content">
       <div class="item-three-chart">
         <div class="chart-wrapper">
-          <svg
-            viewBox="-1 -1 400 300"
-            xmlns="http://www.w3.org/2000/svg"
-            width="400px"
-            height="300px"
-            style="border: 2px solid #000000"
-            v-for="(item, idx) in statistics_three"
-            :key="idx"
-          >
-            <rect
-              :x="(idy+1)*40" 
-              :y="300 - `${100 - item}`"
-              width="20px"
-              :height="100 - `${item}` + 'px'"
-              style="fill: green; stroke: azure;"
-              v-for="item, idy in statistics_three[0]" :key="idy"
-            ></rect>
-          </svg>
+          <my-apexchart width="500" :options="chartOptions" type="area" :series="series"></my-apexchart>
         </div>
       </div>
       <h3>1881345</h3>
@@ -28,15 +11,39 @@
   </div>
 </template>
 <script>
+import Scroll from '@/directives/scrollPosition'
 export default {
   name: "item-three",
   data() {
     return {
-      statistics_three: [
-        [25, 45, 75, 35, 55],
-        [50, 15, 65, 85, 20],
-      ],
-    };
-  },
+      chartOptions: {
+          chart: {
+            id: 'vuechart-example'
+          },
+          xaxis: {
+            categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998]
+          }
+        },
+        series: [{
+          name: 'series-1',
+          data: [30, 40, 35, 50, 49, 60, 70, 91]
+        }]
+      }
+    },
+    mixins: [Scroll('scrollY')],
+    watch:{
+      'scrollY' : function(val){
+        let content = document.getElementsByClassName('item-three-container')
+        if(val>10600 && val< 11500){
+            Array.from(content).forEach(elem=>{
+                elem.classList.add('active')
+            })
+        }else{
+            Array.from(content).forEach(elem=>{
+                elem.classList.remove('active')
+            })
+        }
+      }
+    }
 };
 </script>

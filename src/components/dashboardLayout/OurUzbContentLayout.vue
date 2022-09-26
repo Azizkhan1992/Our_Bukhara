@@ -12,6 +12,8 @@
     <our-travell-location/>
     <our-travell-statistics/>
     <our-travell-news/>
+    <our-travell-services/>
+    <our-travell-videos/>
   </div>
 </template>
 <script>
@@ -27,6 +29,9 @@ import OurCitiesArt from "@/views/content/OurCitiesArt.vue";
 import OurTravellLocation from "@/views/content/OurTravellLocation.vue";
 import OurTravellStatistics from "@/views/content/OurTravellStatistics.vue";
 import OurTravellNews from "@/views/content/OurTravellNews.vue";
+import OurTravellServices from '@/views/content/OurTravellServices.vue';
+import OurTravellVideos from "@/views/content/OurTravellVideos.vue";
+
 export default {
   name: "our-content",
   components: {
@@ -41,7 +46,9 @@ export default {
     OurCitiesArt,
     OurTravellLocation,
     OurTravellStatistics,
-    OurTravellNews
+    OurTravellNews,
+    OurTravellServices,
+    OurTravellVideos
   },
 };
 </script>
