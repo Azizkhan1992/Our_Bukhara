@@ -1,17 +1,17 @@
-@import "./_mixins";
-@import "./_variables";
+@import './_mixins';
+@import './_variables';
 
 @font-face {
-  font-family: "Jost";
-  src: url("@/assets/font/jost/static/Jost-Regular.ttf");
+  font-family: 'Jost';
+  src: url('@/assets/font/jost/static/Jost-Regular.ttf');
 }
 
 body {
   padding: 0;
   margin: 0;
-  background: url("@/assets/Background.jpg") no-repeat;
+  background: url('@/assets/Background.jpg') no-repeat;
   background-size: 100%;
-  font-family: "Jost", sans-serif;
+  font-family: 'Jost', sans-serif;
   --scroll-bar: linear-gradient(#377fb2, #065ea0, #377fb2);
 }
 
@@ -494,7 +494,7 @@ body {
       .scale-background {
         width: 50%;
         height: 250%;
-        background: url("@/assets/OurItems/Content/TwoScale/Frame.svg")
+        background: url('@/assets/OurItems/Content/TwoScale/Frame.svg')
           no-repeat;
         background-position: center;
         position: absolute;
@@ -770,7 +770,7 @@ body {
         .carousel-background {
           width: 50%;
           height: 150%;
-          background: url("@/assets/OurItems/Content/TwoScale/Frame.svg")
+          background: url('@/assets/OurItems/Content/TwoScale/Frame.svg')
             no-repeat;
           background-size: 100%;
           background-position: center;
@@ -1137,7 +1137,7 @@ body {
         position: absolute;
         top: -55%;
         right: 0%;
-        @include BackI(right, "Frame.png");
+        @include BackI(right, 'Frame.png');
         z-index: -1;
       }
 
@@ -1356,7 +1356,7 @@ body {
         position: absolute;
         top: -35%;
         left: 0;
-        @include BackI(left, "Frame1.png");
+        @include BackI(left, 'Frame1.png');
       }
 
       .travell-helper-content {
@@ -1483,7 +1483,7 @@ body {
         position: absolute;
         top: -55%;
         right: 0;
-        @include BackI(right, "Frame.png");
+        @include BackI(right, 'Frame.png');
         z-index: -1;
       }
 
@@ -1604,7 +1604,7 @@ body {
         height: 75%;
         position: absolute;
         top: -50%;
-        @include BackI(left, "Frame1.png");
+        @include BackI(left, 'Frame1.png');
       }
 
       .cities-art-content {
@@ -1736,7 +1736,7 @@ body {
         position: absolute;
         top: -55%;
         right: 0;
-        @include BackI(right, "Frame.png");
+        @include BackI(right, 'Frame.png');
         z-index: -1;
       }
 
@@ -1871,7 +1871,7 @@ body {
         position: absolute;
         top: -40%;
         left: 0;
-        @include BackI(left, "Frame1.png");
+        @include BackI(left, 'Frame1.png');
         z-index: -1;
       }
 
@@ -1881,7 +1881,7 @@ body {
         position: absolute;
         top: 25%;
         right: 0;
-        @include BackI(right, "Frame.png");
+        @include BackI(right, 'Frame.png');
         z-index: -1;
       }
 
@@ -2240,7 +2240,7 @@ body {
         top: -35%;
         left: 0;
         z-index: -1;
-        @include BackI(left, "Frame1.png");
+        @include BackI(left, 'Frame1.png');
       }
 
       .travell-news-content {
@@ -2592,8 +2592,18 @@ body {
     // Threeten Travell Services
     .travell-services-container {
       width: 100%;
-      height: 1100px;
+      height: 1300px;
       margin-top: 100px;
+      position: relative;
+
+      .travell-services-background {
+        width: 50%;
+        height: 75%;
+        position: absolute;
+        right: 0;
+        top: -15%;
+        @include BackI(right, 'Frame.png');
+      }
 
       .travell-services-content {
         width: 85%;
@@ -2601,78 +2611,235 @@ body {
         margin: auto;
         @include Flex(column, space-around);
 
-        .services-images{
+        .services-images {
           width: 100%;
           height: 90%;
           @include Flex(column, space-around);
+          margin-top: 50px;
 
-          .services-left{
+          .services-left {
             width: 85%;
-            height: 50%;
-  
-            .left-img-one{
-              width: 30%;
-              height: 30%;
+            height: 49%;
+
+            .left-img-one {
+              width: 32%;
+              height: 32%;
               margin-left: 200px;
               position: relative;
               @include Flex;
 
-
-              img{
+              img {
                 position: absolute;
-    
-                &.center-img{
-                  width: 95%;
-                  left: -40%;
-                  top: 20%;
+
+                &.center-img {
+                  width: 90%;
+                  left: -36%;
+                  top: 3%;
                 }
-                &.img-one{
+                &.img-one {
                   animation: RotateLeft 10s linear infinite;
                 }
-                &.img-two{
+                &.img-two {
                   animation: RotateRight 10s linear infinite;
                 }
               }
-    
+
               @keyframes RotateLeft {
-                0%{transform: rotate(60deg);}
-                20%{transform: rotate(120deg);}
-                40%{transform: rotate(180deg);}
-                60%{transform: rotate(240deg);}
-                80%{transform: rotate(300deg);}
-                100%{transform: rotate(360deg);}
+                0% {
+                  transform: rotate(0deg);
+                }
+                100% {
+                  transform: rotate(360deg);
+                }
               }
               @keyframes RotateRight {
-                0%{transform: rotate(-60deg);}
-                20%{transform: rotate(-120deg);}
-                40%{transform: rotate(-180deg);}
-                60%{transform: rotate(-240deg);}
-                80%{transform: rotate(-300deg);}
-                100%{transform: rotate(-360deg);}
+                0% {
+                  transform: rotate(0deg);
+                }
+                100% {
+                  transform: rotate(-360deg);
+                }
               }
-    
-              .one-title{
+
+              .one-title {
                 position: absolute;
-                left: -55%;
-                top: -10%;
-                @include Font(1rem, 40px, 600)
+                left: -35%;
+                top: -20%;
+                @include Font(1rem, 40px, 600);
               }
             }
-            .left-img-two{
-              width: 30%;
-              height: 30%;
+            .left-img-two {
+              width: 32%;
+              height: 32%;
               position: relative;
               @include Flex;
-              margin-left: -50px;
+              margin-left: -40px;
 
-              img{
-                position: absolute
+              img {
+                position: absolute;
+              }
+              .center-img-two {
+                width: 75%;
+                height: 75%;
+                position: absolute;
+                left: 42%;
+              }
+              .img-three {
+                animation: RotateLeft 10s linear infinite;
+              }
+              .img-four {
+                margin-bottom: 5px;
+                animation: RotateRight 10s linear infinite;
+              }
+              p {
+                @include Font(1rem, 40px, 400);
+                position: absolute;
+                right: -20%;
+              }
+            }
+            .left-img-three {
+              width: 32%;
+              height: 32%;
+              position: relative;
+              @include Flex;
+              margin-left: 150px;
+              margin-top: 25px;
+
+              img {
+                position: absolute;
+              }
+              .center-img-three {
+                width: 8%;
+              }
+              .img-six {
+                animation: RotateLeft 10s linear infinite;
+              }
+              .img-seven {
+                animation: RotateRight 10s linear infinite;
+              }
+              .img-five {
+                left: -12%;
+              }
+              p {
+                @include Font(1rem, 40px, 400);
+                position: absolute;
+                left: -14%;
+                bottom: 40%;
+              }
+            }
+          }
+
+          .services-right {
+            width: 100%;
+            height: 49%;
+            margin-top: 50px;
+            @include Flex;
+
+            .right-left {
+              width: 50%;
+              height: 100%;
+            }
+
+            .right-right {
+              width: 50%;
+              height: 100%;
+
+              .right-img-one {
+                width: 50%;
+                height: 32%;
+                @include Flex;
+                position: relative;
+
+                img {
+                  position: absolute;
+                }
+                .right-center-one {
+                  left: 42%;
+                  top: 35%;
+                  width: 15%;
+                }
+                .img-eight {
+                  left: 50%;
+                  top: 15%;
+                }
+                .img-nine {
+                  animation: RotateRight 10s linear infinite;
+                }
+                .img-ten {
+                  animation: RotateLeft 10s linear infinite;
+                }
+                p {
+                  @include Font(1rem, 40px, 400);
+                  position: absolute;
+                  right: -30%;
+                  top: -10%;
+                }
+              }
+              .right-img-two {
+                width: 50%;
+                height: 32%;
+                @include Flex;
+                position: relative;
+                margin-left: 45%;
+
+                img {
+                  position: absolute;
+                }
+
+                .right-center-two {
+                  width: 15%;
+                  top: 40%;
+                }
+                .img-elewen {
+                  left: -15%;
+                }
+                .img-twelwe {
+                  animation: RotateRight 10s linear infinite;
+                }
+                .img-threeten {
+                  animation: RotateLeft 10s linear infinite;
+                }
+                p {
+                  @include Font(1rem, 40px, 400);
+                  position: absolute;
+                  left: -55%;
+                  top: 25%;
+                }
+              }
+              .right-img-three {
+                width: 50%;
+                height: 32%;
+                position: relative;
+                @include Flex;
+                margin-left: 10%;
+
+                img {
+                  position: absolute;
+                }
+                .img-fourten {
+                  right: -70%;
+                }
+                .right-center-three {
+                  width: 14%;
+                }
+                .img-fiveten {
+                  animation: RotateRight 10s linear infinite;
+                }
+                .img-sixten {
+                  animation: RotateLeft 10s linear infinite;
+                }
+                p {
+                  @include Font(1rem, 40px, 400);
+                  position: absolute;
+                  right: -20%;
+                  top: 20%;
+                }
               }
             }
           }
         }
 
-        h1{
+        h1 {
           @include Font(3rem, 70px, 700);
           @include BackG;
           letter-spacing: 0.02em;
@@ -2681,10 +2848,296 @@ body {
     }
 
     // Fourten Travell Videos
-    .travell-videos-container{
+    .travell-videos-container {
       width: 100%;
       height: 700px;
       margin-top: 100px;
+      position: relative;
+
+      .travell-videos-default {
+        width: 100%;
+        height: 100%;
+        background: url('@/assets/OurItems/Content/FourtenVideos/UzbMask.png')
+          no-repeat;
+        background-position: center;
+        @include Flex;
+
+        button {
+          background: transparent;
+          border: none;
+          cursor: pointer;
+
+          &:hover {
+            color: #1eb53a;
+          }
+        }
+      }
+
+      .travell-videos-popup {
+        width: 85%;
+        height: 100%;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 7.5%;
+
+        .item-close {
+          position: absolute;
+          right: -5%;
+          top: -5%;
+          cursor: pointer;
+        }
+      }
+    }
+
+    // Fiveten Travell Map
+    .travell-map-container{
+      width: 100%;
+      height: 1100px;
+      margin-top: 50px;
+      position: relative;
+
+      .travell-map-background{
+        width: 50%;
+        height: 75%;
+        position: absolute;
+        right: 0;
+        top: 25%;
+        z-index: -1;
+        @include BackI(right, 'Frame.png')
+      }
+      .travell-map-content{
+        width: 85%;
+        height: 100%;
+        margin: auto;
+        @include Flex(column, space-around);
+        position: relative;
+
+        h1{
+          @include Font(3rem, 70px, 700);
+          @include BackG;
+          margin: 0;  
+        }
+        .travell-map-image{
+          width: 100%;
+          height: 90%;
+          @include Flex;
+
+          .title{
+            position: absolute;
+
+            p{
+              @include Font(1rem, 40px, 500);
+              color: #000;
+            }
+          }
+
+          .aral-active{
+            top: 15%;
+            left: 20%;
+            width: 12%;
+            height: 28px;
+            background: #ffffff;
+            @include Flex;
+            border-radius: 3px;
+          
+          }
+
+          .karakalpak-active{
+            top: 15%;
+            left: 10%;
+            width: 25%;
+            height: 28px;
+            background: #ffffff;
+            border-radius: 3px;
+            @include Flex;
+          }
+
+          .andijan-active{
+            top: 50%;
+            right: 0;
+            width: 12%;
+            height: 28px;
+            background: #ffffff;
+            border-radius: 3px;
+            @include Flex;
+          }
+
+          .buxara-active{
+            top: 55%;
+            width: 12%;
+            height: 28px;
+            background: #000;
+            @include Flex;
+            border-radius: 3px;
+
+            p{
+              color: #ffffff;
+            }
+          }
+          
+          .fargona-active{
+            top: 50%;
+            right: 0;
+            width: 12%;
+            height: 28px;
+            background: #ffffff;
+            border-radius: 3px;
+            @include Flex;
+          }
+
+          .namangan-active{
+            top: 50%;
+            right: 0;
+            width: 12%;
+            height: 28px;
+            background: #ffffff;
+            border-radius: 3px;
+            @include Flex;
+          }
+
+          .jizzah-active{
+            top: 45%;
+            left: 65%;
+            width: 12%;
+            height: 28px;
+            background: #ffffff;
+            border-radius: 3px;
+            @include Flex;
+          }
+
+          .navoiy-active{
+            top: 30%;
+            width: 12%;
+            height: 28px;
+            background: #ffffff;
+            border-radius: 3px;
+            @include Flex;
+          }
+
+          .kashkadaryo-active{
+            top: 60%;
+            left: 55%;
+            width: 15%;
+            height: 28px;
+            background: #000;
+            border-radius: 3px;
+            @include Flex;
+
+            p{
+              color: #ffffff;
+            }
+          }
+
+          .samarkand-active{
+            top: 60%;
+            left: 55%;
+            width: 15%;
+            height: 28px;
+            background: #000;
+            border-radius: 3px;
+            @include Flex;
+
+            p{
+              color: #ffffff;
+            }
+          }
+
+          .sirdaryo-active{
+            top: 45%;
+            left: 65%;
+            width: 12%;
+            height: 28px;
+            background: #ffffff;
+            border-radius: 3px;
+            @include Flex;
+          }
+
+          .surxandaryo-active{
+            top: 65%;
+            left: 50%;
+            width: 15%;
+            height: 28px;
+            background: #000;
+            border-radius: 3px;
+            @include Flex;
+
+            p{
+              color: #ffffff;
+            }
+          }
+
+          .tashkent-city-active{
+            top: 45%;
+            left: 65%;
+            width: 12%;
+            height: 28px;
+            background: #ffffff;
+            border-radius: 3px;
+            @include Flex;
+          }
+
+          .tashkent-active{
+            top: 45%;
+            left: 65%;
+            width: 12%;
+            height: 28px;
+            background: #ffffff;
+            border-radius: 3px;
+            @include Flex;
+          }
+
+          .xorazm-active{
+            top: 50%;
+            left: 30%;
+            width: 12%;
+            height: 28px;
+            background: #000;
+            border-radius: 3px;
+            @include Flex;
+
+            p{
+              color: #ffffff;
+            }
+          }
+
+          .svg-map{
+            width: 90%;
+            height: 90%;
+            @include Flex;
+            cursor: pointer;
+
+            .land{
+              stroke: #ecebed;
+              stroke-width: 2;
+              fill: #ffffff;
+              cursor: pointer;
+
+              &:hover{
+                fill: #1eb53a;
+              }
+            }
+
+            .water{
+              stroke: #ecebed;
+              stroke-width: 2;
+              fill: #ffffff;
+
+              &:hover{
+                fill: #1eb53a;
+
+              }
+            }
+          }
+
+          .map-line{
+            position: absolute;
+            left: 22.5%;
+            top: 44%;
+            pointer-events: none;
+          }
+        }
+      }
     }
   }
   .sticky-btn {

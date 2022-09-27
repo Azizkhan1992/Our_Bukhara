@@ -14,6 +14,7 @@
     <our-travell-news/>
     <our-travell-services/>
     <our-travell-videos/>
+    <our-uzb-travell-map/>
   </div>
 </template>
 <script>
@@ -31,6 +32,7 @@ import OurTravellStatistics from "@/views/content/OurTravellStatistics.vue";
 import OurTravellNews from "@/views/content/OurTravellNews.vue";
 import OurTravellServices from '@/views/content/OurTravellServices.vue';
 import OurTravellVideos from "@/views/content/OurTravellVideos.vue";
+import OurUzbTravellMap from '@/views/content/OurUzbTravellMap.vue'
 
 export default {
   name: "our-content",
@@ -48,7 +50,8 @@ export default {
     OurTravellStatistics,
     OurTravellNews,
     OurTravellServices,
-    OurTravellVideos
+    OurTravellVideos,
+    OurUzbTravellMap
   },
 };
 </script>
