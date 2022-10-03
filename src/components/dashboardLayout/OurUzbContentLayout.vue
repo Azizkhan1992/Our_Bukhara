@@ -15,6 +15,8 @@
     <our-travell-services/>
     <our-travell-videos/>
     <our-uzb-travell-map/>
+    <our-carousel-slider/>
+    <our-progres-bar/>
   </div>
 </template>
 <script>
@@ -32,7 +34,9 @@ import OurTravellStatistics from "@/views/content/OurTravellStatistics.vue";
 import OurTravellNews from "@/views/content/OurTravellNews.vue";
 import OurTravellServices from '@/views/content/OurTravellServices.vue';
 import OurTravellVideos from "@/views/content/OurTravellVideos.vue";
-import OurUzbTravellMap from '@/views/content/OurUzbTravellMap.vue'
+import OurUzbTravellMap from '@/views/content/OurUzbTravellMap.vue';
+import OurCarouselSlider from "@/views/content/OurCarouselSlider.vue";
+import OurProgresBar from "@/views/content/OurProgresBar.vue";
 
 export default {
   name: "our-content",
@@ -51,7 +55,9 @@ export default {
     OurTravellNews,
     OurTravellServices,
     OurTravellVideos,
-    OurUzbTravellMap
+    OurUzbTravellMap,
+    OurCarouselSlider,
+    OurProgresBar
   },
 };
 </script>
