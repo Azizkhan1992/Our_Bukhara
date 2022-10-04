@@ -2,6 +2,8 @@
   <div class="our-uzb-container">
     <our-uzb-header-layout />
     <our-uzb-content-layout />
+    <div id="progressbar"></div>
+    <div id="scrollpath"></div>
     <button class="sticky-btn">
       <svg
         width="17"
@@ -17,15 +19,68 @@
       </svg>
       <a href="#">напишите нам</a>
     </button>
+    <div class="main-circle" id="main-circle">
+      <svg viewBox="-1 -1 50 50" xmlns="http://www.w3.org/2000/svg" width="60px" height="60px">
+        <circle  cx="25" cy="25" r="15.9155" fill="none" stroke-width="3"></circle>
+        <circle  cx="25" cy="25" r="15.9155" fill="none" stroke-width="3" stroke-dasharray="100, 100" :stroke-dashoffset="100-circle_border"></circle>
+      </svg>
+    </div>
     <our-uzb-footer-layout />
   </div>
 </template>
 <script>
+  import Scroll from '@/directives/scrollPosition'
 import OurUzbHeaderLayout from "./OurUzbHeaderLayout.vue";
 import OurUzbContentLayout from "./OurUzbContentLayout.vue";
 import OurUzbFooterLayout from "./OurUzbFooterLayout.vue";
 export default {
   name: "our-main",
   components: { OurUzbHeaderLayout, OurUzbContentLayout, OurUzbFooterLayout },
+  data(){
+    return{
+      circle_border: 0
+    }
+  },
+  mixins: [Scroll('scrollY')],
+
+  watch: {
+    'scrollY' : function(val){
+
+      let progress = document.getElementById('progressbar')
+      let totalHeight1 = document.body.scrollHeight - (val/10);
+
+
+      let scrollItem = document.getElementById('main-circle')
+
+      let totalHeight = document.body.scrollHeight;
+      this.circle_border = 100*((val+1000)/totalHeight)
+
+      scrollItem.onclick = function(){
+        scrollTop();
+      }
+
+      function scrollTop(){
+        window.scrollTo(
+          {
+            top: 0,
+            behavior: 'smooth'
+          }
+        )
+      }
+
+      window.onscroll = function(){
+
+        let progressHeight = (window.pageYOffset/totalHeight1)*100;
+        progress.style.height = progressHeight + '%'
+
+
+        if(document.documentElement.scrollTop > 150 || document.body.scrollTop > 150){
+          scrollItem.classList.add('item-visible')
+        }else{
+          scrollItem.classList.remove('item-visible')
+        }
+      }
+    }
+  }
 };
 </script>

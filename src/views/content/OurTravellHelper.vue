@@ -38,8 +38,7 @@
               alt=""
               v-for="item, idx in helperImages"
               :key="idx"
-              :id="idx"
-              :class="{'img-one' : idx == 4, 'img-two' : idx == 3, 'img-three' : idx == 2, 'img-four' : idx == 1, 'img-five': idx == 0}"
+              :id="'item-'+idx"
             />
           </div>
         </div>
@@ -80,43 +79,24 @@ export default {
   mixins: [Scroll("scrollY")],
   watch: {
     'scrollY' : function (val) {
-        let content1 = document.getElementsByClassName('img-one')
-        let content2 = document.getElementsByClassName('img-two')
-        let content3 = document.getElementsByClassName('img-three')
-        let content4 = document.getElementsByClassName('img-four')
-        let content5 = document.getElementsByClassName('img-five')
+        let content1 = document.getElementById('item-4')
+        let content2 = document.getElementById('item-3')
+        let content3 = document.getElementById('item-2')
+        let content4 = document.getElementById('item-1')
+        let content5 = document.getElementById('item-0')
       if(val>5800 && val<7200){
-        Array.from(content1).forEach(elem=>{
-          elem.classList.add('active')
-        })
-        Array.from(content2).forEach(elem=>{
-          elem.classList.add('active')
-        })
-        Array.from(content3).forEach(elem=>{
-          elem.classList.add('active')
-        })
-        Array.from(content4).forEach(elem=>{
-          elem.classList.add('active')
-        })
-        Array.from(content5).forEach(elem=>{
-          elem.classList.add('active')
-        })
-      }else{
-        Array.from(content1).forEach(elem=>{
-          elem.classList.remove('active')
-        })
-        Array.from(content2).forEach(elem=>{
-          elem.classList.remove('active')
-        })
-        Array.from(content3).forEach(elem=>{
-          elem.classList.remove('active')
-        })
-        Array.from(content4).forEach(elem=>{
-          elem.classList.remove('active')
-        })
-        Array.from(content5).forEach(elem=>{
-          elem.classList.remove('active')
-        })
+        content1.classList.add('active')
+        content2.classList.add('active')
+        content3.classList.add('active')
+        content4.classList.add('active')
+        content5.classList.add('active')
+      }
+      else{
+        content1.classList.remove('active')
+        content2.classList.remove('active')
+        content3.classList.remove('active')
+        content4.classList.remove('active')
+        content5.classList.remove('active')
       }
     },
   },

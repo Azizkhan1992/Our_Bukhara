@@ -6,12 +6,10 @@
         <div
           v-for="open in open_UZ"
           :key="open.id"
-          :id="open.id"
+          :id="'item' + open.id"
           :class="{
             'header-items': open.id == 1 || open.id == 2 || open.id == 3,
             'same-items': open.id == 4 || open.id == 5,
-            'left-item center': open.id == 6,
-            'right-item center' : open.id == 7,
             'center-items': open.id == 8 || open.id == 9 || open.id == 10,
             'footer-item': open.id == 11,
           }"
@@ -92,13 +90,15 @@ export default {
 
   watch: {
     'scrollY': function(val){
+      // console.log(val)
         let content1 = document.getElementsByClassName('header-items');
         let content2 = document.getElementsByClassName('same-items')
-        let content3 = document.getElementsByClassName('center')
-        let content4 = document.getElementsByClassName('center-items')
-        let content5 = document.getElementsByClassName('footer-item')
-        // console.log(val)
-        if(750<val && 1600 > val){
+        let content3 = document.getElementById('item6')
+        let content4 = document.getElementById('item7')
+        let content5 = document.getElementsByClassName('center-items')
+        let content6 = document.getElementsByClassName('footer-item')
+        // console.log(content3)
+        if(750<val && 1700 > val){
             Array.from(content1).forEach(element => {
                     element.classList.add('active')
                 });
@@ -117,29 +117,27 @@ export default {
                 });
         }
         if(1350<val && 2450 > val){
-            Array.from(content3).forEach(element => {
-                    element.classList.add('active')
-                });
+          content3.classList.add('active')
+          content4.classList.add('active')
         }else{
-            Array.from(content3).forEach(element => {
-                    element.classList.remove('active')
-                });
+          content3.classList.remove('active')
+          content4.classList.remove('active')
         }
-        if(1750<val && 2800 > val){
-            Array.from(content4).forEach(element => {
+        if(1750<val && 3000 > val){
+            Array.from(content5).forEach(element => {
                     element.classList.add('active')
                 });
         }else{
-            Array.from(content4).forEach(element => {
+            Array.from(content5).forEach(element => {
                     element.classList.remove('active')
                 });
         }
         if(2275<val && 3250 > val){
-            Array.from(content5).forEach(element => {
+            Array.from(content6).forEach(element => {
                     element.classList.add('active')
                 });
         }else{
-            Array.from(content5).forEach(element => {
+            Array.from(content6).forEach(element => {
                     element.classList.remove('active')
                 });
         }
